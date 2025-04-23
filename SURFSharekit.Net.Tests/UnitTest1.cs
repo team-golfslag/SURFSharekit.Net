@@ -1,4 +1,4 @@
-﻿namespace SURFSharekit.Net.Test;
+﻿namespace SURFSharekit.Net.Tests;
 
 public class UnitTest1
 {
