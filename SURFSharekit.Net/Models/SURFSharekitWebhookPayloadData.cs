@@ -14,7 +14,7 @@ public class SURFSharekitWebhookPayloadData
     /// </summary>
     [JsonPropertyName("id")]
     public string? Id { get; set; }
-    
+
     /// <summary>
     /// The type of object, for now it can only contain the value "RepoItem".
     /// </summary>

@@ -2,6 +2,7 @@
 // University within the Software Project course.
 // 
 // © Copyright Utrecht University (Department of Information and Computing Sciences)
+
 using System.Net;
 
 namespace SURFSharekit.Net.Tests.Helpers;
@@ -9,6 +10,7 @@ namespace SURFSharekit.Net.Tests.Helpers;
 /// <summary>
 /// A fake HTTP message handler for testing purposes.
 /// </summary>
+// ReSharper disable once InconsistentNaming
 public class FakeHttpMessageHandler : HttpMessageHandler
 {
     private readonly string _responseContent;

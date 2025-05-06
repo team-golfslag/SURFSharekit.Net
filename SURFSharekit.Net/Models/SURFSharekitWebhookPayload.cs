@@ -7,15 +7,18 @@ using System.Text.Json.Serialization;
 
 namespace SURFSharekit.Net.Models;
 
-/// <summary> <para>
+/// <summary>
+/// <para>
 /// Webhooks in our system provide real-time notifications when RepoItems are updated, created or deleted.
 /// This allows external applications or services to stay synchronized with the latest changes in our repository.
 /// Webhooks are triggered for the following events: creation, update or deletion of a RepoItem.
 /// Upon failure webhooks are retransmitted once.
-/// </para> <para>
+/// </para>
+/// <para>
 /// Webhooks are enabled and configured per channel.
 /// Please contact a WORKSAdmin to enable webhooks for a specific channel and configuring the callback url.
-/// </para> </summary>
+/// </para>
+/// </summary>
 public class SURFSharekitWebhookPayload
 {
     /// <summary>
@@ -23,7 +26,7 @@ public class SURFSharekitWebhookPayload
     /// </summary>
     [JsonPropertyName("id")]
     public string? Id { get; set; }
-        
+
     /// <summary>
     /// Type of webhook, the following types are supported: "Create", "Update" and "Delete".
     /// </summary>
@@ -35,7 +38,7 @@ public class SURFSharekitWebhookPayload
     /// </summary>
     [JsonPropertyName("createdAt")]
     public DateTime? CreatedAt { get; set; }
-        
+
     /// <summary>
     /// Contains a JSON object with information about the object for which the webhook was created.
     /// </summary>

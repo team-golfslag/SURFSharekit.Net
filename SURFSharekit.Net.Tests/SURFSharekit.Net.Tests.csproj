@@ -19,7 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SURFSharekit.Net\SURFSharekit.Net.csproj" />
+        <ProjectReference Include="..\SURFSharekit.Net\SURFSharekit.Net.csproj"/>
     </ItemGroup>
 
 </Project>

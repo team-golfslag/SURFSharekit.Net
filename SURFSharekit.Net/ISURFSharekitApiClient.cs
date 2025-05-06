@@ -14,14 +14,14 @@ public interface ISURFSharekitApiClient
     /// Call this before calling other methods if authentication is required.
     /// </summary>
     void SetBearerToken(string bearerToken);
-    
+
     /// <summary>
-    /// Get all <see cref="SURFSharekitRepoItem"/>s accessible to the token
+    /// Get all <see cref="SURFSharekitRepoItem" />s accessible to the token
     /// </summary>
     Task<List<SURFSharekitRepoItem>?> GetAllRepoItems();
-    
+
     /// <summary>
-    /// Get a specific <see cref="SURFSharekitRepoItem"/>
+    /// Get a specific <see cref="SURFSharekitRepoItem" />
     /// </summary>
     /// <param name="id"></param>
     Task<SURFSharekitRepoItem?> GetRepoItemById(string id);

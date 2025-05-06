@@ -27,7 +27,7 @@ public class SURFSharekitApiClient : ISURFSharekitApiClient
     {
         _httpClient = httpClient;
     }
-    
+
     /// <summary>
     /// Sets the bearer token for all subsequent requests.
     /// Call this before calling other methods if authentication is required.
@@ -37,7 +37,7 @@ public class SURFSharekitApiClient : ISURFSharekitApiClient
             new("Bearer", bearerToken);
 
     /// <summary>
-    /// Get all <see cref="SURFSharekitRepoItem"/>s accessible to the token
+    /// Get all <see cref="SURFSharekitRepoItem" />s accessible to the token
     /// </summary>
     public async Task<List<SURFSharekitRepoItem>?> GetAllRepoItems()
     {
@@ -48,7 +48,7 @@ public class SURFSharekitApiClient : ISURFSharekitApiClient
     }
 
     /// <summary>
-    /// Get a specific <see cref="SURFSharekitRepoItem"/>
+    /// Get a specific <see cref="SURFSharekitRepoItem" />
     /// </summary>
     /// <param name="id">The repo </param>
     public async Task<SURFSharekitRepoItem?> GetRepoItemById(string id)
