@@ -5,27 +5,17 @@ namespace SURFSharekit.Net.Models;
 public class SURFSharekitVocabularies
 {
     [JsonPropertyName("vocabularyZiezo")] 
-    public List<Vocabulary> VocabularyZiezo { get; set; } = [];
+    public List<SURFSharekitVocabulary> VocabularyZiezo { get; set; } = [];
 
     [JsonPropertyName("vocabularyDas")] 
-    public List<Vocabulary> VocabularyDas { get; set; } = [];
+    public List<SURFSharekitVocabulary> VocabularyDas { get; set; } = [];
 
     [JsonPropertyName("vocabularyInformationLiteracy")]
-    public List<Vocabulary> VocabularyInformationLiteracy { get; set; } = [];
+    public List<SURFSharekitVocabulary> VocabularyInformationLiteracy { get; set; } = [];
 
     [JsonPropertyName("vocabularyVerpleegkunde")]
-    public List<Vocabulary> VocabularyVerpleegkunde { get; set; } = [];
+    public List<SURFSharekitVocabulary> VocabularyVerpleegkunde { get; set; } = [];
 
     [JsonPropertyName("vocabularyVaktherapie")]
-    public List<Vocabulary> VocabularyVaktherapie { get; set; } = [];
-}
-
-public class Vocabulary
-{
-    [JsonPropertyName("source")]
-    public string? Source { get; set; }
-    
-    [JsonPropertyName("value")]
-    public string? Value { get; set; }
-    
+    public List<SURFSharekitVocabulary> VocabularyVaktherapie { get; set; } = [];
 }
