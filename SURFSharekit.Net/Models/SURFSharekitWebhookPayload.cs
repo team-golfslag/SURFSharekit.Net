@@ -40,20 +40,5 @@ public class SURFSharekitWebhookPayload
     /// Contains a JSON object with information about the object for which the webhook was created.
     /// </summary>
     [JsonPropertyName("data")]
-    public Data? Data { get; set; }
-}
-
-public class Data
-{
-    /// <summary>
-    /// A unique UuidV4 identifier to identify the object.
-    /// </summary>
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
-    
-    /// <summary>
-    /// The type of object, for now it can only contain the value "RepoItem".
-    /// </summary>
-    [JsonPropertyName("type")]
-    public string? Type { get; set; }
+    public SURFSharekitWebhookPayloadData? Data { get; set; }
 }
