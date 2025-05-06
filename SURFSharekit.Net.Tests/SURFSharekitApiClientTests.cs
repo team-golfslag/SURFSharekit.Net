@@ -381,14 +381,25 @@ public class SURFSharekitApiClientTests
         SURFSharekitApiClient client = new(httpClient);
 
         // Act
-        var groups = await client.GetAllRepoItems();
+        var repoItems = await client.GetAllRepoItems();
 
         // Assert
-        Assert.NotNull(groups);
-        Assert.Single(groups);
-        SURFSharekitRepoItem firstGroup = groups[0];
-        Assert.Equal("7c90e92e-712a-423f-9d62-a15d38ef28ed", firstGroup.Id);
-        Assert.Equal("repoItem", firstGroup.Type);
+        Assert.NotNull(repoItems);
+        Assert.Single(repoItems);
+        SURFSharekitRepoItem firstRepoItem = repoItems[0];
+        
+        Assert.Equal("7c90e92e-712a-423f-9d62-a15d38ef28ed", firstRepoItem.Id);
+        Assert.Equal("repoItem", firstRepoItem.Type);
+        
+        Assert.NotNull(firstRepoItem.SURFSharekitAttributes);
+        Assert.Equal("10.80467/8b0f8e7a-4ac8-4401-81ff-59cfec949f48", firstRepoItem.SURFSharekitAttributes.Doi);
+        
+        Assert.NotNull(firstRepoItem.SURFSharekitAttributes.SURFSharekitVocabularies);
+        Assert.Equal("http://purl.edustandaard.nl/concept/6d78d67c-9d42-4f57-9fa2-b24aabbcf892", firstRepoItem.SURFSharekitAttributes.SURFSharekitVocabularies.VocabularyDas[0].Source);
+        
+        Assert.NotNull(firstRepoItem.SURFSharekitAttributes.SURFSharekitOwner);
+        Assert.Equal("6949c6f2-517c-4c3e-881f-3d712e0b0640", firstRepoItem.SURFSharekitAttributes.SURFSharekitOwner.Id);
+        
     }
     
 }
