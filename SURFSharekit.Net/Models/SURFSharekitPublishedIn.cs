@@ -5,28 +5,28 @@ namespace SURFSharekit.Net.Models;
 public class SURFSharekitPublishedIn
 {
     [JsonPropertyName("title")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     [JsonPropertyName("publisherDocument")]
-    public string PublisherDocument { get; set; }
+    public string? PublisherDocument { get; set; }
 
     [JsonPropertyName("placeOfPublication")]
-    public string PlaceOfPublication { get; set; }
+    public string? PlaceOfPublication { get; set; }
 
     [JsonPropertyName("year")]
     public int? Year { get; set; }
 
     [JsonPropertyName("issue")]
-    public string Issue { get; set; }
+    public string? Issue { get; set; }
 
     [JsonPropertyName("edition")]
-    public string Edition { get; set; }
+    public string? Edition { get; set; }
 
     [JsonPropertyName("issn")]
-    public string Issn { get; set; }
+    public string? Issn { get; set; }
 
     [JsonPropertyName("isbn")]
-    public string Isbn { get; set; }
+    public string? Isbn { get; set; }
 
     [JsonPropertyName("pageStart")]
     public int? PageStart { get; set; }

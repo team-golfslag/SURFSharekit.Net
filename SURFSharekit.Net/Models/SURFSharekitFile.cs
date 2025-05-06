@@ -5,17 +5,17 @@ namespace SURFSharekit.Net.Models;
 public class SURFSharekitFile
 {
     [JsonPropertyName("fileName")]
-    public string FileName { get; set; }
+    public string? FileName { get; set; }
 
     [JsonPropertyName("accessRight")]
-    public string AccessRight { get; set; }
+    public string? AccessRight { get; set; }
 
     [JsonPropertyName("eTag")]
-    public string ETag { get; set; }
+    public string? ETag { get; set; }
 
     [JsonPropertyName("url")]
-    public string Url { get; set; }
+    public string? Url { get; set; }
 
     [JsonPropertyName("resourceMimeType")]
-    public string ResourceMimeType { get; set; }
+    public string? ResourceMimeType { get; set; }
 }

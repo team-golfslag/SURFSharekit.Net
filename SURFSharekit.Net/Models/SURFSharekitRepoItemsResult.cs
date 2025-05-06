@@ -10,14 +10,14 @@ namespace SURFSharekit.Net.Models;
 public class SURFSharekitRepoItemsResult
 {
     [JsonPropertyName("meta")]
-    public SURFSharekitMeta SURFSharekitMeta { get; set; }
+    public SURFSharekitMeta? SURFSharekitMeta { get; set; }
 
     [JsonPropertyName("filters")]
-    public List<string> Filters { get; set; }
+    public List<string> Filters { get; set; } = [];
 
     [JsonPropertyName("links")]
-    public SURFSharekitLinks SURFSharekitLinks { get; set; }
+    public SURFSharekitLinks? SURFSharekitLinks { get; set; }
 
     [JsonPropertyName("data")]
-    public List<SURFSharekitRepoItem> Data { get; set; }
+    public List<SURFSharekitRepoItem> Data { get; set; } = [];
 }

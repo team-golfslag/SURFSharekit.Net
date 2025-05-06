@@ -5,8 +5,8 @@ namespace SURFSharekit.Net.Models;
 public class SURFSharekitCost
 {
     [JsonPropertyName("source")]
-    public object Source { get; set; }
+    public string? Source { get; set; }
 
     [JsonPropertyName("value")]
-    public object Value { get; set; }
+    public string? Value { get; set; }
 }

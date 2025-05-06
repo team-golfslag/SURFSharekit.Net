@@ -5,8 +5,8 @@ namespace SURFSharekit.Net.Models;
 public class SURFSharekitAuthor
 {
     [JsonPropertyName("person")]
-    public SURFSharekitPerson SURFSharekitPerson { get; set; }
+    public SURFSharekitPerson? SURFSharekitPerson { get; set; }
 
     [JsonPropertyName("role")]
-    public string Role { get; set; }
+    public string? Role { get; set; }
 }
