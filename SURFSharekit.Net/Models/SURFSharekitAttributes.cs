@@ -44,7 +44,7 @@ public class SURFSharekitAttributes
     public List<string> Keywords { get; set; } = [];
 
     [JsonPropertyName("numOfPages")]
-    public int NumOfPages { get; set; }
+    public int? NumOfPages { get; set; }
 
     [JsonPropertyName("links")]
     public List<SURFSharekitLink> Links { get; set; } = [];

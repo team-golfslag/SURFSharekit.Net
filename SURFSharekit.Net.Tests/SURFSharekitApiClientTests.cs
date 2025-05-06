@@ -11,6 +11,10 @@ namespace SURFSharekit.Net.Tests;
 
 public class SURFSharekitApiClientTests
 {
+    /// <summary>
+    /// When the bearer token to be used to authorize is set,
+    /// Then the HTTP client should have a Authorisation header with the bearer token
+    /// </summary>
     [Fact]
     public void SetBearerToken_SetsAuthorizationHeader()
     {
