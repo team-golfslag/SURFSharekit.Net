@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace SURFSharekit.Net.Models;
 
-public class SURFSharekitLinks
+public class SURFSharekitRepoItemLinks
 {
     [JsonPropertyName("first")]
     public string? First { get; set; }

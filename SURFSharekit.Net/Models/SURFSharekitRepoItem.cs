@@ -1,8 +1,3 @@
-// This program has been developed by students from the bachelor Computer Science at Utrecht
-// University within the Software Project course.
-// 
-// © Copyright Utrecht University (Department of Information and Computing Sciences)
-
 using System.Text.Json.Serialization;
 
 namespace SURFSharekit.Net.Models;
@@ -10,7 +5,7 @@ namespace SURFSharekit.Net.Models;
 public class SURFSharekitRepoItem
 {
     [JsonPropertyName("attributes")]
-    public SURFSharekitAttributes? SURFSharekitAttributes { get; set; }
+    public SURFSharekitAttributes? Attributes { get; set; }
 
     [JsonPropertyName("type")]
     public string? Type { get; set; }

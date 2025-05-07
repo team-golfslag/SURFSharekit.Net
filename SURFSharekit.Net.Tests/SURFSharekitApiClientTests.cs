@@ -39,7 +39,7 @@ public class SURFSharekitApiClientTests
     /// <summary>
     /// Given a valid <see cref="SURFSharekitApiClient" />,
     /// When GetRepoItemById is called,
-    /// Then it should return the <see cref="SURFSharekitRepoItem" /> specified by that id.
+    /// Then it should return the <see cref="Models.SURFSharekitRepoItem" /> specified by that id.
     /// </summary>
     [Fact]
     public async Task GetRepoItemById_ReturnsRepoItem()
@@ -203,10 +203,10 @@ public class SURFSharekitApiClientTests
         Assert.NotNull(item);
         Assert.Equal("dummy-id", item.Id);
         Assert.Equal("repoItem", item.Type);
-        Assert.NotNull(item.SURFSharekitAttributes);
-        Assert.Equal("Test Title", item.SURFSharekitAttributes.Title);
-        Assert.NotEmpty(item.SURFSharekitAttributes.Authors);
-        Assert.Equal("John Doe", item.SURFSharekitAttributes.Authors[0].SURFSharekitPerson?.Name);
+        Assert.NotNull(item.Attributes);
+        Assert.Equal("Test Title", item.Attributes.Title);
+        Assert.NotEmpty(item.Attributes.Authors);
+        Assert.Equal("John Doe", item.Attributes.Authors[0].Person?.Name);
     }
 
     /// <summary>
@@ -395,14 +395,14 @@ public class SURFSharekitApiClientTests
         Assert.Equal("7c90e92e-712a-423f-9d62-a15d38ef28ed", firstRepoItem.Id);
         Assert.Equal("repoItem", firstRepoItem.Type);
 
-        Assert.NotNull(firstRepoItem.SURFSharekitAttributes);
-        Assert.Equal("10.80467/8b0f8e7a-4ac8-4401-81ff-59cfec949f48", firstRepoItem.SURFSharekitAttributes.Doi);
+        Assert.NotNull(firstRepoItem.Attributes);
+        Assert.Equal("10.80467/8b0f8e7a-4ac8-4401-81ff-59cfec949f48", firstRepoItem.Attributes.Doi);
 
-        Assert.NotNull(firstRepoItem.SURFSharekitAttributes.SURFSharekitVocabularies);
+        Assert.NotNull(firstRepoItem.Attributes.Vocabularies);
         Assert.Equal("http://purl.edustandaard.nl/concept/6d78d67c-9d42-4f57-9fa2-b24aabbcf892",
-            firstRepoItem.SURFSharekitAttributes.SURFSharekitVocabularies.VocabularyDas[0].Source);
+            firstRepoItem.Attributes.Vocabularies.VocabularyDas[0].Source);
 
-        Assert.NotNull(firstRepoItem.SURFSharekitAttributes.SURFSharekitOwner);
-        Assert.Equal("6949c6f2-517c-4c3e-881f-3d712e0b0640", firstRepoItem.SURFSharekitAttributes.SURFSharekitOwner.Id);
+        Assert.NotNull(firstRepoItem.Attributes.Owner);
+        Assert.Equal("6949c6f2-517c-4c3e-881f-3d712e0b0640", firstRepoItem.Attributes.Owner.Id);
     }
 }

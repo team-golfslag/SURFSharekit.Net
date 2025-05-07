@@ -1,8 +1,3 @@
-// This program has been developed by students from the bachelor Computer Science at Utrecht
-// University within the Software Project course.
-// 
-// © Copyright Utrecht University (Department of Information and Computing Sciences)
-
 using System.Text.Json.Serialization;
 
 namespace SURFSharekit.Net.Models;
@@ -10,16 +5,19 @@ namespace SURFSharekit.Net.Models;
 public class SURFSharekitAttributes
 {
     [JsonPropertyName("owner")]
-    public SURFSharekitOwner? SURFSharekitOwner { get; set; }
+    public SURFSharekitOwner? Owner { get; set; }
 
-    [JsonPropertyName("consortium")]
-    public string? Consortium { get; set; }
+    [JsonPropertyName("mboDomain")]
+    public List<string> MboDomain { get; set; } = [];
+
+    [JsonPropertyName("mboDiscipline")]
+    public List<string> MboDiscipline { get; set; } = [];
 
     [JsonPropertyName("typicalAgeRange")]
-    public string? TypicalAgeRange { get; set; }
+    public SURFSharekitTypicalAgeRange? TypicalAgeRange { get; set; }
 
     [JsonPropertyName("cost")]
-    public SURFSharekitCost? SURFSharekitCost { get; set; }
+    public SURFSharekitCost? Cost { get; set; }
 
     [JsonPropertyName("urn:nbn")]
     public string? UrnNbn { get; set; }
@@ -49,7 +47,7 @@ public class SURFSharekitAttributes
     public List<string> Keywords { get; set; } = [];
 
     [JsonPropertyName("numOfPages")]
-    public int? NumOfPages { get; set; }
+    public string? NumOfPages { get; set; }
 
     [JsonPropertyName("links")]
     public List<SURFSharekitLink> Links { get; set; } = [];
@@ -94,25 +92,31 @@ public class SURFSharekitAttributes
     public string? TechnicalFormat { get; set; }
 
     [JsonPropertyName("vocabularies")]
-    public SURFSharekitVocabularies? SURFSharekitVocabularies { get; set; }
+    public SURFSharekitVocabularies? Vocabularies { get; set; }
 
     [JsonPropertyName("aggregationlevel")]
-    public string? AggregationLevel { get; set; }
+    public string? Aggregationlevel { get; set; }
 
     [JsonPropertyName("intendedUser")]
     public string? IntendedUser { get; set; }
 
+    [JsonPropertyName("raid")]
+    public string? Raid { get; set; }
+
+    [JsonPropertyName("siaFileNum")]
+    public string? SiaFileNum { get; set; }
+
     [JsonPropertyName("doi")]
     public string? Doi { get; set; }
-
-    [JsonPropertyName("availability")]
-    public string? Availability { get; set; }
 
     [JsonPropertyName("handle")]
     public string? Handle { get; set; }
 
+    [JsonPropertyName("availability")]
+    public string? Availability { get; set; }
+
     [JsonPropertyName("publishedIn")]
-    public SURFSharekitPublishedIn? SURFSharekitPublishedIn { get; set; }
+    public SURFSharekitPublishedIn? PublishedIn { get; set; }
 
     [JsonPropertyName("conference")]
     public string? Conference { get; set; }
