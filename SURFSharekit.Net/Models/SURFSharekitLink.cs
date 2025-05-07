@@ -1,15 +1,18 @@
 using System.Text.Json.Serialization;
 
-namespace SURFSharekit.Net.Models
+namespace SURFSharekit.Net.Models;
+
+public class SURFSharekitLink
 {
-    public class SURFSharekitLink
-    {
-        [JsonPropertyName("url")] public string? Url { get; set; }
+    [JsonPropertyName("url")]
+    public string? Url { get; set; }
 
-        [JsonPropertyName("accessRight")] public string? AccessRight { get; set; }
+    [JsonPropertyName("accessRight")]
+    public string? AccessRight { get; set; }
 
-        [JsonPropertyName("urlName")] public string? UrlName { get; set; }
+    [JsonPropertyName("urlName")]
+    public string? UrlName { get; set; }
 
-        [JsonPropertyName("important")] public string? Important { get; set; }
-    }
+    [JsonPropertyName("important")]
+    public string? Important { get; set; }
 }

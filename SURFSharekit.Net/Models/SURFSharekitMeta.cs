@@ -1,9 +1,9 @@
 using System.Text.Json.Serialization;
 
-namespace SURFSharekit.Net.Models
+namespace SURFSharekit.Net.Models;
+
+public class SURFSharekitMeta
 {
-    public class SURFSharekitMeta
-    {
-        [JsonPropertyName("totalCount")] public int? TotalCount { get; set; }
-    }
+    [JsonPropertyName("totalCount")]
+    public int? TotalCount { get; set; }
 }

@@ -1,9 +1,9 @@
 using System.Text.Json.Serialization;
 
-namespace SURFSharekit.Net.Models
+namespace SURFSharekit.Net.Models;
+
+public class SURFSharekitTypicalAgeRange
 {
-    public class SURFSharekitTypicalAgeRange
-    {
-        [JsonPropertyName("string")] public string? String { get; set; }
-    }
+    [JsonPropertyName("string")]
+    public string? String { get; set; }
 }

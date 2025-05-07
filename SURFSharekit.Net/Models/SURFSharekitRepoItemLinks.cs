@@ -9,11 +9,15 @@ namespace SURFSharekit.Net.Models;
 
 public class SURFSharekitRepoItemLinks
 {
-    [JsonPropertyName("first")] public string? First { get; set; }
+    [JsonPropertyName("first")]
+    public string? First { get; set; }
 
-    [JsonPropertyName("self")] public string? Self { get; set; }
+    [JsonPropertyName("self")]
+    public string? Self { get; set; }
 
-    [JsonPropertyName("next")] public string? Next { get; set; }
+    [JsonPropertyName("next")]
+    public string? Next { get; set; }
 
-    [JsonPropertyName("last")] public string? Last { get; set; }
+    [JsonPropertyName("last")]
+    public string? Last { get; set; }
 }
