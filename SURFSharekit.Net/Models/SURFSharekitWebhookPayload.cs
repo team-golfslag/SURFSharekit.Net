@@ -31,8 +31,8 @@ public class SURFSharekitWebhookPayload
     /// Type of webhook, the following types are supported: "Create", "Update" and "Delete".
     /// </summary>
     [JsonPropertyName("type")]
-    public string? Type { get; set; }
-
+    public SURFSharekitWebhookPayloadType Type { get; set; }
+    
     /// <summary>
     /// Timestamp indicating the time at which the webhook was created.
     /// </summary>
