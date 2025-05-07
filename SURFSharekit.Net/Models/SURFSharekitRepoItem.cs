@@ -8,8 +8,8 @@ public class SURFSharekitRepoItem
     public SURFSharekitAttributes? Attributes { get; set; }
 
     [JsonPropertyName("type")]
-    public string Type { get; set; }
+    public string? Type { get; set; }
 
     [JsonPropertyName("id")]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 }
