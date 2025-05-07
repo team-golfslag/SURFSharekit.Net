@@ -32,7 +32,7 @@ public class SURFSharekitWebhookPayload
     /// </summary>
     [JsonPropertyName("type")]
     public SURFSharekitWebhookPayloadType Type { get; set; }
-    
+
     /// <summary>
     /// Timestamp indicating the time at which the webhook was created.
     /// </summary>
