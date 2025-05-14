@@ -5,7 +5,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace SURFSharekit.Net.Models;
+namespace SURFSharekit.Net.Models.WebhooksByDocumentation;
 
 /// <summary>
 /// <para>

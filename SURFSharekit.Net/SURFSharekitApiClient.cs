@@ -5,6 +5,7 @@
 
 using System.Net.Http.Json;
 using SURFSharekit.Net.Models;
+using SURFSharekit.Net.Models.RepoItem;
 
 namespace SURFSharekit.Net;
 

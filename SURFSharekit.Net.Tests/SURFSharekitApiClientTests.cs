@@ -5,6 +5,7 @@
 
 using System.Net;
 using SURFSharekit.Net.Models;
+using SURFSharekit.Net.Models.RepoItem;
 using SURFSharekit.Net.Tests.Helpers;
 
 namespace SURFSharekit.Net.Tests;
@@ -39,7 +40,7 @@ public class SURFSharekitApiClientTests
     /// <summary>
     /// Given a valid <see cref="SURFSharekitApiClient" />,
     /// When GetRepoItemById is called,
-    /// Then it should return the <see cref="Models.SURFSharekitRepoItem" /> specified by that id.
+    /// Then it should return the <see cref="SURFSharekitRepoItem" /> specified by that id.
     /// </summary>
     [Fact]
     public async Task GetRepoItemById_ReturnsRepoItem()

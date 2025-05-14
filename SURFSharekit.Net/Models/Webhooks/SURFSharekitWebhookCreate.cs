@@ -3,6 +3,8 @@
 // 
 // © Copyright Utrecht University (Department of Information and Computing Sciences)
 
-namespace SURFSharekit.Net.Models.WebhookCreate;
+using SURFSharekit.Net.Models.RepoItem;
+
+namespace SURFSharekit.Net.Models.Webhooks;
 
 public class SURFSharekitWebhookCreate : SURFSharekitRepoItem;

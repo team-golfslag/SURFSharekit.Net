@@ -5,7 +5,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace SURFSharekit.Net.Models.WebhookDelete;
+namespace SURFSharekit.Net.Models.Webhooks;
 
 public class SURFSharekitWebhookDeleteMeta
 {

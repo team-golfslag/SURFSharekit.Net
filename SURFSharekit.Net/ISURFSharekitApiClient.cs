@@ -4,6 +4,7 @@
 // © Copyright Utrecht University (Department of Information and Computing Sciences)
 
 using SURFSharekit.Net.Models;
+using SURFSharekit.Net.Models.RepoItem;
 
 namespace SURFSharekit.Net;
 
