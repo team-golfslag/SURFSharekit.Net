@@ -4,6 +4,7 @@
 // © Copyright Utrecht University (Department of Information and Computing Sciences)
 
 using System.Net.Http.Json;
+using SURFSharekit.Net.Exceptions;
 using SURFSharekit.Net.Models;
 
 namespace SURFSharekit.Net;
@@ -39,24 +40,24 @@ public class SURFSharekitApiClient : ISURFSharekitApiClient
     /// <summary>
     /// Get all <see cref="SURFSharekitRepoItem" />s accessible to the token
     /// </summary>
-    public async Task<List<SURFSharekitRepoItem>?> GetAllRepoItems()
+    public async Task<List<SURFSharekitRepoItem>> GetAllRepoItems()
     {
         HttpResponseMessage response = await _httpClient.GetAsync("repoItems");
         response.EnsureSuccessStatusCode();
         SURFSharekitRepoItemsResult? results = await response.Content.ReadFromJsonAsync<SURFSharekitRepoItemsResult>();
-        return results?.Data;
+        return results?.Data ?? throw new ResultIsNullException(response.Content.ReadAsStringAsync().Result);
     }
 
     /// <summary>
     /// Get a specific <see cref="SURFSharekitRepoItem" />
     /// </summary>
     /// <param name="id">The repo </param>
-    public async Task<SURFSharekitRepoItem?> GetRepoItemById(string id)
+    public async Task<SURFSharekitRepoItem> GetRepoItemById(string id)
     {
         HttpResponseMessage response = await _httpClient.GetAsync($"repoItems/{id}");
         response.EnsureSuccessStatusCode();
         SURFSharekitRepoItem? result = await response.Content.ReadFromJsonAsync<SURFSharekitRepoItem>();
 
-        return result;
+        return result ?? throw new ResultIsNullException(response.Content.ReadAsStringAsync().Result);
     }
 }
