@@ -46,7 +46,6 @@ public class SURFSharekitApiClientTests
     [Fact]
     public async Task GetRepoItemById_ReturnsRepoItem()
     {
-        // Arrange: Prepare a dummy JSON response for SCIMGroup.
         // dummy json obtained from api specification
         const string json = """
                             {
@@ -210,16 +209,74 @@ public class SURFSharekitApiClientTests
         Assert.NotEmpty(item.Attributes.Authors);
         Assert.Equal("John Doe", item.Attributes.Authors[0].Person?.Name);
     }
-
+    
     /// <summary>
-    /// Given a valid SCIM API client,
-    /// When GetAllRepoItems is called,
-    /// Then it should return a list of SCIMGroup objects.
+    /// Given a valid <see cref="SURFSharekitApiClient"/>,
+    /// When GetRepoItemById is called without valid id,
+    /// Then it should throw an exception.
     /// </summary>
     [Fact]
-    public async Task GetAllRepoItems_ReturnsListOfSCIMGroups()
+    public async Task GetRepoItemById_IsInvalidId_Throws()
     {
-        // Arrange: Prepare dummy JSON for a SCIMGroupsResult.
+        // dummy json obtained from api specification
+        const string json = """
+                            {
+                              "error": "error message"
+                            }
+                            """;
+
+        FakeHttpMessageHandler handler = new(json, HttpStatusCode.BadRequest);
+        HttpClient httpClient = new(handler)
+        {
+            BaseAddress = new("https://dummy/"),
+        };
+        SURFSharekitApiClient client = new(httpClient);
+
+        // Act
+
+        // Act & Assert
+        await Assert.ThrowsAnyAsync<Exception>(async () =>
+        {
+            await client.GetRepoItemById("dummy-id");
+        });
+    }
+    
+    /// <summary>
+    /// Given an invalid <see cref="SURFSharekitApiClient"/>,
+    /// When GetRepoItemById is called,
+    /// Then it should throw an exception.
+    /// </summary>
+    [Fact]
+    public async Task GetRepoItemById_NotAuthenticated_Throws()
+    {
+        // dummy json obtained from api specification
+        const string json = "Incorrect token";
+
+        FakeHttpMessageHandler handler = new(json, HttpStatusCode.Unauthorized);
+        HttpClient httpClient = new(handler)
+        {
+            BaseAddress = new("https://dummy/"),
+        };
+        SURFSharekitApiClient client = new(httpClient);
+
+        // Act
+
+        // Act & Assert
+        await Assert.ThrowsAnyAsync<Exception>(async () =>
+        {
+            await client.GetRepoItemById("dummy-id");
+        });
+    }
+    
+    /// <summary>
+    /// Given a valid <see cref="SURFSharekitApiClient"/>,
+    /// When GetAllRepoItems is called,
+    /// Then it should return a list of <see cref="SURFSharekitRepoItem"/> objects.
+    /// </summary>
+    [Fact]
+    public async Task GetAllRepoItems_ReturnsListOfSURFSharekitRepoItems()
+    {
+        // Arrange: Prepare dummy JSON for a SURFSharekitRepoItemsResult.
         const string json = """
                             {
                               "meta": {
@@ -407,7 +464,6 @@ public class SURFSharekitApiClientTests
         Assert.NotNull(firstRepoItem.Attributes.Owner);
         Assert.Equal("6949c6f2-517c-4c3e-881f-3d712e0b0640", firstRepoItem.Attributes.Owner.Id);
     }
-
     [Fact]
     public async Task GetAllRepoItems_ShouldThrow_WhenResponseIsNull()
     {
@@ -447,5 +503,4 @@ public class SURFSharekitApiClientTests
             await client.GetRepoItemById("dummy-id");
         });
     }
-
 }
