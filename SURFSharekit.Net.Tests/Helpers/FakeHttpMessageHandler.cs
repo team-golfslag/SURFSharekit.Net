@@ -13,10 +13,10 @@ namespace SURFSharekit.Net.Tests.Helpers;
 // ReSharper disable once InconsistentNaming
 public class FakeHttpMessageHandler : HttpMessageHandler
 {
-    private readonly string _responseContent;
+    private readonly string? _responseContent;
     private readonly HttpStatusCode _statusCode;
 
-    public FakeHttpMessageHandler(string responseContent, HttpStatusCode statusCode)
+    public FakeHttpMessageHandler(string? responseContent, HttpStatusCode statusCode)
     {
         _responseContent = responseContent;
         _statusCode = statusCode;
@@ -27,7 +27,7 @@ public class FakeHttpMessageHandler : HttpMessageHandler
     {
         HttpResponseMessage response = new(_statusCode)
         {
-            Content = new StringContent(_responseContent),
+            Content = _responseContent != null ? new StringContent(_responseContent) : null,
         };
         return Task.FromResult(response);
     }

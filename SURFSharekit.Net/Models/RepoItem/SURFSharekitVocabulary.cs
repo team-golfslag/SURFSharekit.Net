@@ -1,8 +1,8 @@
 using System.Text.Json.Serialization;
 
-namespace SURFSharekit.Net.Models;
+namespace SURFSharekit.Net.Models.RepoItem;
 
-public class SURFSharekitEducationalLevel
+public class SURFSharekitVocabulary
 {
     [JsonPropertyName("source")]
     public string? Source { get; set; }

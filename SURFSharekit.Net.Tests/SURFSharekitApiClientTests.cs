@@ -4,7 +4,9 @@
 // © Copyright Utrecht University (Department of Information and Computing Sciences)
 
 using System.Net;
+using SURFSharekit.Net.Exceptions;
 using SURFSharekit.Net.Models;
+using SURFSharekit.Net.Models.RepoItem;
 using SURFSharekit.Net.Tests.Helpers;
 
 namespace SURFSharekit.Net.Tests;
@@ -39,7 +41,7 @@ public class SURFSharekitApiClientTests
     /// <summary>
     /// Given a valid <see cref="SURFSharekitApiClient" />,
     /// When GetRepoItemById is called,
-    /// Then it should return the <see cref="Models.SURFSharekitRepoItem" /> specified by that id.
+    /// Then it should return the <see cref="SURFSharekitRepoItem" /> specified by that id.
     /// </summary>
     [Fact]
     public async Task GetRepoItemById_ReturnsRepoItem()
@@ -462,6 +464,43 @@ public class SURFSharekitApiClientTests
         Assert.NotNull(firstRepoItem.Attributes.Owner);
         Assert.Equal("6949c6f2-517c-4c3e-881f-3d712e0b0640", firstRepoItem.Attributes.Owner.Id);
     }
+    [Fact]
+    public async Task GetAllRepoItems_ShouldThrow_WhenResponseIsNull()
+    {
+        // Arrange: Prepare dummy JSON for a SCIMGroupsResult.
+        const string? json = null;
+
+        FakeHttpMessageHandler handler = new(json, HttpStatusCode.OK);
+        HttpClient httpClient = new(handler)
+        {
+            BaseAddress = new("https://dummy/"),
+        };
+        SURFSharekitApiClient client = new(httpClient);
+
+        // Act & Assert
+        await Assert.ThrowsAnyAsync<Exception>(async () =>
+        {
+            await client.GetAllRepoItems();
+        });
+    }
     
-    
+    [Fact]
+    public async Task GetRepoItemById_ShouldThrow_WhenResponseIsNull()
+    {
+        // Arrange: Prepare dummy JSON for a SCIMGroupsResult.
+        const string? json = null;
+
+        FakeHttpMessageHandler handler = new(json, HttpStatusCode.OK);
+        HttpClient httpClient = new(handler)
+        {
+            BaseAddress = new("https://dummy/"),
+        };
+        SURFSharekitApiClient client = new(httpClient);
+
+        // Act & Assert
+        await Assert.ThrowsAnyAsync<Exception>(async () =>
+        {
+            await client.GetRepoItemById("dummy-id");
+        });
+    }
 }

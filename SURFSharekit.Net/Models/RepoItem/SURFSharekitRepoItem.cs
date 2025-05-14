@@ -1,11 +1,11 @@
 using System.Text.Json.Serialization;
 
-namespace SURFSharekit.Net.Models;
+namespace SURFSharekit.Net.Models.RepoItem;
 
-public class SURFSharekitInstitute
+public class SURFSharekitRepoItem
 {
-    [JsonPropertyName("name")]
-    public string? Name { get; set; }
+    [JsonPropertyName("attributes")]
+    public SURFSharekitAttributes? Attributes { get; set; }
 
     [JsonPropertyName("type")]
     public string? Type { get; set; }
