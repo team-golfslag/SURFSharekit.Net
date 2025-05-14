@@ -5,12 +5,13 @@
 
 using System.Text.Json.Serialization;
 
-namespace SURFSharekit.Net.Models;
+namespace SURFSharekit.Net.Models.Webhooks;
 
-[JsonConverter(typeof(JsonStringEnumConverter<SURFSharekitWebhookPayloadType>))]
-public enum SURFSharekitWebhookPayloadType
+public class SURFSharekitWebhookDeleteMeta
 {
-    Create,
-    Update,
-    Delete,
+    [JsonPropertyName("status")]
+    public string? Status { get; set; }
+    
+    [JsonPropertyName("deletedAt")]
+    public DateTime? DeletedAt { get; set; }
 }
