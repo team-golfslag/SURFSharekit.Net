@@ -11,7 +11,6 @@ namespace SURFSharekit.Net.Models;
 
 public class SURFSharekitBaseResponse
 {
-    //type is object, because it could be
     /// <summary>
     /// Type is object, because it could either be a <see cref="SURFSharekitWebhookCreate"/>,
     /// <see cref="SURFSharekitRepoItem"/> (both <see cref="SURFSharekitAttributes"/>) or
