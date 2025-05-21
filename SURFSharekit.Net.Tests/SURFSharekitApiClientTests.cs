@@ -216,7 +216,7 @@ public class SURFSharekitApiClientTests
     /// Then it should throw an exception.
     /// </summary>
     [Fact]
-    public async Task GetRepoItemById_IsInvalidId_Throws()
+    public async Task GetRepoItemById_ShouldThrow_WhenIdIsInvalid()
     {
         // dummy json obtained from api specification
         const string json = """
@@ -247,7 +247,7 @@ public class SURFSharekitApiClientTests
     /// Then it should throw an exception.
     /// </summary>
     [Fact]
-    public async Task GetRepoItemById_NotAuthenticated_Throws()
+    public async Task GetRepoItemById_ShouldThrow_WhenNotAuthenticated()
     {
         // dummy json obtained from api specification
         const string json = "Incorrect token";
@@ -274,7 +274,7 @@ public class SURFSharekitApiClientTests
     /// Then it should return a list of <see cref="SURFSharekitRepoItem"/> objects.
     /// </summary>
     [Fact]
-    public async Task GetAllRepoItems_ReturnsListOfSURFSharekitRepoItems()
+    public async Task GetAllRepoItems_ShouldReturnListOfSURFSharekitRepoItems_WhenAuthenticated()
     {
         // Arrange: Prepare dummy JSON for a SURFSharekitRepoItemsResult.
         const string json = """
