@@ -4,13 +4,17 @@
 // © Copyright Utrecht University (Department of Information and Computing Sciences)
 
 using System.Text.Json.Serialization;
+using SURFSharekit.Net.Models.RepoItem;
 
-namespace SURFSharekit.Net.Models.RepoItem;
+namespace SURFSharekit.Net.Models.Webhooks;
 
-public class SURFSharekitRepoItem
+public class SURFSharekitWebhookDeleteDTO : SURFSharekitWebhookBaseDTO
 {
+    [JsonPropertyName("meta")]
+    public SURFSharekitWebhookDeleteMeta? Meta { get; set; }
+
     [JsonPropertyName("attributes")]
-    public SURFSharekitAttributes? Attributes { get; set; }
+    public List<object> Attributes { get; set; } = [];
 
     [JsonPropertyName("type")]
     public string? Type { get; set; }

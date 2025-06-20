@@ -8,13 +8,10 @@ using SURFSharekit.Net.Models.RepoItem;
 
 namespace SURFSharekit.Net.Models.Webhooks;
 
-public class SURFSharekitWebhookDelete
+public class SURFSharekitWebhookCreateDTO : SURFSharekitWebhookBaseDTO
 {
-    [JsonPropertyName("meta")]
-    public SURFSharekitWebhookDeleteMeta DeleteMeta { get; set; }
-
     [JsonPropertyName("attributes")]
-    public List<object> Attributes { get; set; } = [];
+    public SURFSharekitAttributes? Attributes { get; set; }
 
     [JsonPropertyName("type")]
     public string? Type { get; set; }
